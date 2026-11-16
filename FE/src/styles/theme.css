@@ -56,6 +56,11 @@ body {
   box-shadow: var(--bc-shadow-soft);
 }
 
+/* --bs-body-bg è trasparente: senza questo il contenuto sotto la modale traspare */
+.modal {
+  --bs-modal-bg: var(--bc-surface-solid);
+}
+
 .bc-gradient-text {
   background: var(--bc-gradient);
   -webkit-background-clip: text;

@@ -2,6 +2,9 @@ spring:
   application:
     name: demo
 
+  config:
+    import: optional:file:.env[.properties]
+
   datasource:
     url: jdbc:postgresql://localhost:5432/messaggistica_database
     username: ${DB_USERNAME:postgres}
@@ -38,7 +41,7 @@ openrouter:
   model: ${OPENROUTER_MODEL:openai/gpt-4o-mini}
 
 jwt:
-  secret: ${JWT_SECRET:changeme-dev-only-please-override-in-env}
+  secret: ${JWT_SECRET}
   expiration-ms: ${JWT_EXPIRATION_MS:86400000}
 
 chat:
