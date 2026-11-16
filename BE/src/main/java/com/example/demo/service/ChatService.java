@@ -72,6 +72,7 @@ public class ChatService {
 
         List<MessaggioResponse> messaggi = messaggioRepository
                 .findByChat_IdOrderByCreatedAtDesc(chat.getId(), PageRequest.of(0, limiteMessaggi))
+                .reversed()
                 .stream()
                 .map(MessaggioResponse::from)
                 .toList();
